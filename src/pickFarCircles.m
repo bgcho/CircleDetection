@@ -1,0 +1,14 @@
+function [centers_far, radii_far] = pickFarCircles(centers, radii, no_pick);
+
+mean_center = mean(centers,1);
+distance = sqrt(sum((centers-repmat(mean_center,[size(centers,1),1])).^2,2));
+
+[~,I] = sort(distance);
+
+centers_far = centers(I,:);
+radii_far = radii(I);
+
+centers_far = centers_far([1:min(no_pick,size(centers,1))],:);
+radii_far = radii_far([1:min(no_pick,size(centers,1))]);
+
+
