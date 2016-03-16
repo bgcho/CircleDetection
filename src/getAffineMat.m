@@ -1,0 +1,12 @@
+function Aff_mat = getAffineMat(x1, x2)
+
+A_mat = [x1(1,1), -x1(1,2), 1, 0 ; x1(1,2), x1(1,1), 0, 1; x1(2,1), -x1(2,2), 1, 0; x1(2,2), x1(2,1), 0, 1];
+b_vec = x2.';
+b_vec = b_vec(:);
+
+x_vec = A_mat\b_vec;
+% scf= sqrt(sum(x_vec(1:2).^2))
+
+Aff_mat = [x_vec(1), -x_vec(2), x_vec(3) ; x_vec(2), x_vec(1), x_vec(4) ; 0, 0, 1];
+
+
