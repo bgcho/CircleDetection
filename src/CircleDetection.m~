@@ -4,7 +4,7 @@
 
 warning('off', 'all')
 th = 1;
-no_pick = [2 2];
+no_pick = [15 15];
 numIteration = 10000;
 
 pair_no = input('Which pair ? [1-12] ');

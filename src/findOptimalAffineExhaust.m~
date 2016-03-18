@@ -29,7 +29,10 @@ for ii = 1:length(subPts1)
 	keyboard
 	
     H = getAffineMat(x1(subPts1(ii,:),:), x2(subPts2(jj,:),:));
-   
+    
+    
+    keyboard
+      
     % Warp x1
     x1_warp = H*x1_hom;
     x1_warp = x1_warp(1:2,:).';
